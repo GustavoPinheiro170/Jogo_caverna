@@ -1,20 +1,46 @@
 "use strict";
 
 var person = document.getElementById("person");
-var entrar = document.getElementById('entrar'); // Resgata posição do personagem
+var entrar = document.getElementById('entrar');
+var start = document.getElementById("start"); // Resgata posição do personagem
 
 function Posicao(e) {
   var person = this;
-  var local = person.getBoundingClientRect(); // console.log('posição x ', local.left, 'posição y', local.top);
+  var local = person.getBoundingClientRect();
+  console.log('posição x ', local.left, 'posição y', local.top);
 
   if (local.left >= 750) {
     $('#modal').addClass('block');
   }
-} // Adiciona classe do passaro
+}
 
+start.addEventListener('keypress', function (e) {
+  var person = document.getElementById("person");
+  var local = person.getBoundingClientRect();
+
+  switch (e.key) {
+    case 'd':
+      if (local.left >= 1214.234375) {
+        alert('Não saia da tela!!!');
+      }
+
+      break;
+
+    case 'a':
+      if (local.left < -10.000) {
+        alert('Não saia da tela!!!');
+      }
+
+  }
+}); // Adiciona classe do passaro
 
 function Bird() {
   $("#bird").addClass('bird');
+} // função start e pause
+
+
+function startPause() {
+  $(start).toggleClass('pause');
 }
 
 function x() {
@@ -35,15 +61,10 @@ function x() {
 }
 
 entrar.addEventListener('click', x);
-var start = document.getElementById("start"); // Comandos básicos do personagem
+start.addEventListener('click', startPause); // Comandos básicos do personagem
 
-window.addEventListener('keydown', function (e) {
-  if (!e.repeat) ;
-
+start.addEventListener('keydown', function (e) {
   switch (e.key) {
-    case false:
-      $(person).removeClass('move');
-
     case 'd':
       $(person).css('margin-left', '+=15px');
       $(person).removeClass('down');
@@ -60,7 +81,6 @@ window.addEventListener('keydown', function (e) {
       break;
 
     case 'w':
-      $(person).toggleClass('up');
       $(person).removeClass('down');
       $(person).removeClass('atack');
       break;
@@ -76,10 +96,10 @@ start.addEventListener('keyup', function (e) {
 
   switch (e.key) {
     case 'd':
-      $(person).addClass('stop');
       $(person).removeClass('move');
       $(person).removeClass('up');
       $(person).removeClass('atack');
+      $(person).addClass('stop');
       break;
 
     case 'a':
@@ -88,6 +108,12 @@ start.addEventListener('keyup', function (e) {
       $(person).removeClass('up');
       $(person).removeClass('atack');
       break;
+
+    case 's':
+      $(person).addClass('stop');
+      $(person).removeClass('move');
+      $(person).removeClass('up');
+      $(person).removeClass('atack');
   }
 });
 start.addEventListener('keypress', function (e) {

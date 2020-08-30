@@ -14,19 +14,22 @@ input{
 }
 
 .container {
-    margin-top: 50px;
-    margin-left: 5%;
+    margin-top: 10px;
+    margin-left: 1%;
+    margin-right: 2%;
     display: flex;
-    width: 1473px;
-    height: 712px;
+    width: 1400px;
+    height: 725px;
     background-color: black;
     background-image: url('img/inicio.png');
-    background-size: 1473px 712px;
+    background-size: 1400px 725px;
     z-index: -1;
     background-repeat: no-repeat;
     border-radius: 10px;
     border: 2px solid black;
 }
+
+
 button {
     margin-top: 5%;
     margin-left: 40%;
@@ -40,9 +43,13 @@ button {
 }
 
 .pause {
+    content: 'Start';
     margin-left: 0% !important;
     margin-top:8%;
 
+}
+.pause:before{
+    content: 'Pause';
 }
 
 #modal a {
@@ -187,4 +194,18 @@ button {
     width: 200px;
     position: relative;
     display: flex;
+}
+
+@media (max-width:1366px){
+    .container {
+        margin-left: 0;
+        margin-right: 0;
+        background-image: url('img/inicio.png');
+        background-size: 1350px 615px;
+        width: 1350px;
+        height: 615px;
+    }
+    #person {
+        margin-top: 26% !important;
+    }
 }

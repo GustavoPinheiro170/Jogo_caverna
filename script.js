@@ -5,38 +5,57 @@ let start = document.getElementById("start");
 function Posicao(e) {
     const person = this;
     const local = person.getBoundingClientRect();
-    // console.log('posição x ', local.left, 'posição y', local.top);
+    console.log('posição x ', local.left, 'posição y', local.top);
     if (local.left >= 750) {
         $('#modal').addClass('block');
     }
 }
+
+
+start.addEventListener('keypress', (e) => {
+    const person = document.getElementById("person");
+    const local = person.getBoundingClientRect();
+
+    switch (e.key) {
+
+        case 'd':
+            if (local.left >= 1214.234375 )  {
+                alert('Não saia da tela!!!');
+            }
+        break;
+        case 'a':
+            if (local.left < -10.000)  {
+                alert('Não saia da tela!!!');
+            }
+    }
+});
+
 // Adiciona classe do passaro
 function Bird() {
     $("#bird").addClass('bird');
 }
 
 // função start e pause
-function startPause(){
-    start.innerHTML = 'Pause';
-   $(start).toggleClass('pause');
+function startPause() {
+    $(start).toggleClass('pause');
 
 }
 
 function x() {
     const pass = document.getElementById('senha').value;
-    const sucess= document.getElementById('sucess');
+    const sucess = document.getElementById('sucess');
     const error = document.getElementById('error')
     if (pass == '178956') {
         console.log(pass);
-        sucess.style.display ='block';
-        error.style.display ='none';
+        sucess.style.display = 'block';
+        error.style.display = 'none';
         sucess.innerHTML = 'VOCÊ ACERTOU';
-        
+
     } else {
         sucess.style.display = 'none';
-        error.style.display ='block';
+        error.style.display = 'block';
         error.innerHTML = 'TENTE NOVAMENTE';
-       
+
     }
 }
 
@@ -51,7 +70,7 @@ start.addEventListener('click', startPause);
 start.addEventListener('keydown', (e) => {
 
     switch (e.key) {
-        
+
         case 'd':
             $(person).css('margin-left', '+=15px');
             $(person).removeClass('down');
@@ -78,7 +97,7 @@ start.addEventListener('keydown', (e) => {
 
 start.addEventListener('keyup', (e) => {
 
-    
+
     if (!e.repeat);
     switch (e.key) {
         case 'd':
@@ -94,7 +113,7 @@ start.addEventListener('keyup', (e) => {
             $(person).removeClass('up');
             $(person).removeClass('atack');
             break;
-        case 's' :
+        case 's':
             $(person).addClass('stop');
             $(person).removeClass('move');
             $(person).removeClass('up');
