@@ -4,14 +4,6 @@ html{
     width: 100vw;
 }
 
-body {
-    background-color: black;
-    background-image: url('img/inicio.png');
-    background-size: cover;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-position-y: -68px;
-}
 
 input{
     margin-top: 20px;
@@ -20,17 +12,37 @@ input{
     text-align: center;
     border-radius: 10px;
 }
+
+.container {
+    margin-top: 50px;
+    margin-left: 5%;
+    display: flex;
+    width: 1473px;
+    height: 712px;
+    background-color: black;
+    background-image: url('img/inicio.png');
+    background-size: 1473px 712px;
+    z-index: -1;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    border: 2px solid black;
+}
 button {
+    margin-top: 5%;
+    margin-left: 40%;
+    margin-right: 40%;
     font-size: 30px;
     padding: 20px;
     font-weight: 600;
     display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
-    left: 0;
-    right: 0;
     z-index: 9999999;
+}
+
+.pause {
+    margin-left: 0% !important;
+    margin-top:8%;
+
 }
 
 #modal a {
@@ -45,11 +57,11 @@ button {
 }
 #person {
     background-image: url('img/person_init.png');
-    position: absolute;
+    position: relative;
     z-index: 99;
     display: flex;
     width: 200px;
-    margin-top: 35%;
+    margin-top: 32%;
     height: 100vh;
     margin-left: 0px;
     background-repeat: no-repeat;
@@ -59,7 +71,7 @@ button {
     width: 100px;
     z-index: 9999;
     display: flex;
-    position: absolute;
+    position: relative;
     height: 100px;
     top: 0;
     right: 0;
@@ -166,4 +178,13 @@ button {
   #error {
     font-size: 30px;
     color: red;
+}
+
+#control{
+    background-image: url('img/aswd.png');
+    background-size: 200px 100px;
+    height: 100px;
+    width: 200px;
+    position: relative;
+    display: flex;
 }

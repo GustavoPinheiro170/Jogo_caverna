@@ -1,6 +1,6 @@
 const person = document.getElementById("person");
 const entrar = document.getElementById('entrar');
-
+let start = document.getElementById("start");
 // Resgata posição do personagem
 function Posicao(e) {
     const person = this;
@@ -13,6 +13,13 @@ function Posicao(e) {
 // Adiciona classe do passaro
 function Bird() {
     $("#bird").addClass('bird');
+}
+
+// função start e pause
+function startPause(){
+    start.innerHTML = 'Pause';
+   $(start).toggleClass('pause');
+
 }
 
 function x() {
@@ -32,16 +39,19 @@ function x() {
        
     }
 }
+
+
 entrar.addEventListener('click', x);
 
 
-let start = document.getElementById("start");
+
+
+start.addEventListener('click', startPause);
 // Comandos básicos do personagem
-window.addEventListener('keydown', (e) => {
-    if (!e.repeat);
+start.addEventListener('keydown', (e) => {
+
     switch (e.key) {
-        case false:
-            $(person).removeClass('move');
+        
         case 'd':
             $(person).css('margin-left', '+=15px');
             $(person).removeClass('down');
@@ -56,7 +66,6 @@ window.addEventListener('keydown', (e) => {
             $(person).removeClass('atack');
             break;
         case 'w':
-            $(person).toggleClass('up');
             $(person).removeClass('down');
             $(person).removeClass('atack');
             break;
@@ -68,13 +77,16 @@ window.addEventListener('keydown', (e) => {
 });
 
 start.addEventListener('keyup', (e) => {
+
+    
     if (!e.repeat);
     switch (e.key) {
         case 'd':
-            $(person).addClass('stop');
             $(person).removeClass('move');
             $(person).removeClass('up');
             $(person).removeClass('atack');
+            $(person).addClass('stop');
+
             break;
         case 'a':
             $(person).addClass('stop');
@@ -82,6 +94,11 @@ start.addEventListener('keyup', (e) => {
             $(person).removeClass('up');
             $(person).removeClass('atack');
             break;
+        case 's' :
+            $(person).addClass('stop');
+            $(person).removeClass('move');
+            $(person).removeClass('up');
+            $(person).removeClass('atack');
     }
 
 })
