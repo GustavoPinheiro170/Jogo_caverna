@@ -41,7 +41,7 @@ html{
 #x {
     background-image: url('../img/x.png');
     background-size: cover;
-    width: 100px;
+    width: 200px;
     height: 100px;
     position: relative;
     top:650px;
@@ -250,7 +250,7 @@ button {
         margin-top: 24% !important;
     }
     #x {        
-    top: 550px !important;
+         top: 550px !important;
     }
     #pergaminho {
         margin-top: 31% !important;
