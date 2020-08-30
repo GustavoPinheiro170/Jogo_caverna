@@ -250,9 +250,9 @@ button {
         margin-top: 24% !important;
     }
     #x {        
-    top: 550px;
+    top: 550px !important;
     }
     #pergaminho {
-        margin-top: 31%;
+        margin-top: 31% !important;
     }
 }
