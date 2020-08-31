@@ -184,7 +184,7 @@ button {
   }
 
   #modal {
-      
+      display: none;
       justify-content: center;
       text-align: center;
       position: absolute;
@@ -236,7 +236,29 @@ button {
     position: relative;
     display: flex;
 }
+#fechaModal{
+    display: flex;
+    position: absolute;
+    font-size: 25px;
+    right: 0;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    z-index: 9999999;
+    cursor: pointer;
+    background-color: black;
+transition: .2s;
+}
 
+#fechaModal:hover{
+    font-weight: bold;
+    color: black;
+    background-color: white;
+}
+
+.none {
+    display: none ;
+}
 @media (max-width:1366px){
     .container {
         margin-left: 0;

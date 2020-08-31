@@ -94,4 +94,5 @@ window.addEventListener('keypress', (e) => {
 })
 
 // iniciando a função
-person.addEventListener('click', Posicao)
+person.addEventListener('click', Posicao);
+

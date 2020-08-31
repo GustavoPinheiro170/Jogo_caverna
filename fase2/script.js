@@ -1,13 +1,14 @@
 const pergaminho = document.getElementById("pergaminho");
 const personagem = document.getElementById('person');
-const entrar = document.getElementById('entrar');
+const modal =      document.getElementById("modal");
+const entrar =     document.getElementById('entrar');
 // Resgata posição do pergaminho
 function Posicao(e) {
     const pergaminho = this;
     const local = personagem.getBoundingClientRect();
     console.log('posição x ', local.left, 'posição y', local.top);
     if (local.left >= 745) {
-        $('#modal').addClass('block');
+        $('#modal').toggleClass('block');
     }
 }
 
@@ -22,3 +23,11 @@ function x(){
 }
 
 entrar.addEventListener('click', x);
+
+const fechaModal = document.getElementById('fechaModal');
+
+const Modal = () => {
+    $('#modal').toggleClass('block');
+}
+
+fechaModal.addEventListener("click", Modal);
